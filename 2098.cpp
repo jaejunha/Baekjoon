@@ -9,8 +9,11 @@ int b[17][65536];
 typedef pair<int, int> P;
 
 int dfs(int x, int v) {
-	if (v == (1 << n) - 1)
+	if (v == (1 << n) - 1) {
+		if (!w[x][0])
+			return 17000000;
 		return w[x][0];
+	}
 
 	int &ret = b[x][v];
 	if (ret)
